@@ -1,0 +1,1267 @@
+<div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="row revenue-states">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h4>词云</h4>
+                                </div>      
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                <div id="main-chart">
+                                        <div id="word_cloud" class="main-chart">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--easy pie chart-->
+
+<script src="./zhanshi/js/easypiechart/jquery.easypiechart.js"></script>
+
+<script src="./zhanshi/js/easypiechart/easypiechart-init.js"></script>
+
+<script src="./zhanshi/js/echarts.js"></script>
+
+
+
+
+
+<!--common scripts for all pages-->
+
+<script src="{% static 'zhanshi/js/scripts.js'%}"></script>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+var myChart1 = echarts.init(document.getElementById('word_cloud'));
+option = {
+    title: {
+        text: '’华为‘话题词云',
+        x: 'center',
+        textStyle: {
+            fontSize: 30
+        }
+
+    },
+    backgroundColor: '#F7F7F7',
+    tooltip: {
+        show: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {
+                iconStyle: {
+                    normal: {
+                        color: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    },
+    series: [{
+        name: '热点分析',
+        type: 'wordCloud',
+        //size: ['9%', '99%'],
+        sizeRange: [10, 100],
+        textRotation: [0, 45, 90, -45],
+        rotationRange: [-100,200 ],
+        shape: 'circle',
+        textPadding: 0,
+        autoSize: {
+            enable: true,
+            minSize: 6
+        },
+        textStyle: {
+            normal: {
+                color: function() {
+                    return 'rgb(' + [
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160)
+                    ].join(',') + ')';
+                }
+            },
+            emphasis: {
+                shadowBlur: 10,
+                shadowColor: '#333'
+            }
+        },
+        data: []
+    }]
+};
+
+var JosnList = [];
+
+JosnList.push({
+    name: "华为",
+    value: "84949"
+}, {
+    name: "手机",
+    value: "40386"
+}, {
+    name: "小米",
+    value: "22449"
+}, {
+    name: "公司",
+    value: "13384"
+}, {
+    name: "荣耀",
+    value: "12225"
+}, {
+    name: "三星",
+    value: "9868"
+}, {
+    name: "苹果",
+    value: "8864"
+}, {
+    name: "产品",
+    value: "8309"
+}, {
+    name: "员工",
+    value: "8260"
+}, {
+    name: "工作",
+    value: "7667"
+}, {
+    name: "企业",
+    value: "7638"
+}, {
+    name: "用户",
+    value: "7196"
+}, {
+    name: "系统",
+    value: "6895"
+}, {
+    name: "技术",
+    value: "6697"
+}, {
+    name: "市场",
+    value: "6650"
+}, {
+    name: "中国",
+    value: "6186"
+}, {
+    name: "屏幕",
+    value: "5741"
+}, {
+    name: "品牌",
+    value: "5500"
+}, {
+    name: "魅族",
+    value: "5059"
+}, {
+    name: "喜欢",
+    value: "4981"
+}, {
+    name: "价格",
+    value: "4855"
+},  {
+    name: "性能",
+    value: "4618"
+}, {
+    name: "国内",
+    value: "4600"
+}, {
+    name: "功能",
+    value: "4572"
+}, {
+    name: "研发",
+    value: "4470"
+}, {
+    name: "设计",
+    value: "4442"
+}, {
+    name: "体验",
+    value: "4435"
+}, {
+    name: "厂商",
+    value: "4272"
+}, {
+    name: "硬件",
+    value: "4059"
+}, {
+    name: "时间",
+    value: "4014"
+}, {
+    name: "发展",
+    value: "3938"
+}, {
+    name: "支持",
+    value: "3887"
+}, {
+    name: "系列",
+    value: "3776"
+}, {
+    name: "软件",
+    value: "3749"
+}, {
+    name: "配置",
+    value: "3536"
+}, {
+    name: "行业",
+    value: "3464"
+}, {
+    name: "拍照",
+    value: "3441"
+},  {
+    name: "性价比",
+    value: "3296"
+}, {
+    name: "高端",
+    value: "3222"
+}, {
+    name: "消费者",
+    value: "3118"
+}, {
+    name: "麒麟",
+    value: "3003"
+}, {
+    name: "能力",
+    value: "2943"
+}, {
+    name: "芯片",
+    value: "2940"
+}, {
+    name: "希望",
+    value: "2931"
+}, {
+    name: "加班",
+    value: "2870"
+}, {
+    name: "高通",
+    value: "2764"
+},  {
+    name: "电池",
+    value: "2713"
+}, {
+    name: "推荐",
+    value: "2699"
+}, {
+    name: "发布",
+    value: "2695"
+}, {
+    name: "营销",
+    value: "2645"
+}, {
+    name: "部门",
+    value: "2641"
+}, {
+    name: "业务",
+    value: "2637"
+}, {
+    name: "摄像头",
+    value: "2580"
+}, {
+    name: "续航",
+    value: "2555"
+}, {
+    name: "销量",
+    value: "2507"
+}, {
+    name: "模式",
+    value: "2501"
+}, {
+    name: "内存",
+    value: "2499"
+}, {
+    name: "安卓",
+    value: "2485"
+}, {
+    name: "质量",
+    value: "2454"
+}, {
+    name: "外观",
+    value: "2401"
+}, {
+    name: "处理器",
+    value: "2393"
+}, {
+    name: "通信",
+    value: "2383"
+}, {
+    name: "专利",
+    value: "2375"
+}, {
+    name: "数据",
+    value: "2364"
+}, {
+    name: "成本",
+    value: "2364"
+}, {
+    name: "国产",
+    value: "2360"
+}, {
+    name: "旗舰",
+    value: "2359"
+}, {
+    name: "未来",
+    value: "2337"
+}, {
+    name: "影响",
+    value: "2332"
+}, {
+    name: "水军",
+    value: "2305"
+}, {
+    name: "互联网",
+    value: "2284"
+}, {
+    name: "网络",
+    value: "2262"
+}, {
+    name: "第一",
+    value: "2235"
+}, {
+    name: "评价",
+    value: "2206"
+}, {
+    name: "销售",
+    value: "2201"
+}, {
+    name: "世界",
+    value: "2159"
+}, {
+    name: "成功",
+    value: "2144"
+}, {
+    name: "提升",
+    value: "2143"
+}, {
+    name: "建议",
+    value: "2117"
+}, {
+    name: "海军",
+    value: "2106"
+}, {
+    name: "优势",
+    value: "2085"
+}, {
+    name: "任正非",
+    value: "2042"
+}, {
+    name: "内部",
+    value: "2009"
+},  {
+    name: "服务",
+    value: "1990"
+}, {
+    name: "利润",
+    value: "1976"
+}, {
+    name: "中兴",
+    value: "1968"
+}, {
+    name: "科技",
+    value: "1923"
+}, {
+    name: "需求",
+    value: "1917"
+}, {
+    name: "海思",
+    value: "1895"
+}, {
+    name: "专业",
+    value: "1895"
+}, {
+    name: "红米",
+    value: "1893"
+}, {
+    name: "简单",
+    value: "1876"
+}, {
+    name: "广告",
+    value: "1861"
+}, {
+    name: "设备",
+    value: "1848"
+}, {
+    name: "客户",
+    value: "1845"
+}, {
+    name: "更好",
+    value: "1841"
+}, {
+    name: "国家",
+    value: "1840"
+}, {
+    name: "领导",
+    value: "1830"
+}, {
+    name: "流畅",
+    value: "1829"
+}, {
+    name: "充电",
+    value: "1826"
+}, {
+    name: "全球",
+    value: "1802"
+}, {
+    name: "岗位",
+    value: "1788"
+}, {
+    name: "联想",
+    value: "1774"
+}, {
+    name: "版本",
+    value: "1768"
+}, {
+    name: "运营商",
+    value: "1765"
+}, {
+    name: "机型",
+    value: "1757"
+}, {
+    name: "指纹",
+    value: "1755"
+}, {
+    name: "管理",
+    value: "1755"
+}, {
+    name: "朋友",
+    value: "1753"
+}, {
+    name: "工资",
+    value: "1752"
+}, {
+    name: "优秀",
+    value: "1750"
+}, {
+    name: "海外",
+    value: "1744"
+},  {
+    name: "升级",
+    value: "1737"
+}, {
+    name: "信号",
+    value: "1727"
+}, {
+    name: "水平",
+    value: "1720"
+}, {
+    name: "深圳",
+    value: "1711"
+},  {
+    name: "收入",
+    value: "1676"
+}, {
+    name: "游戏",
+    value: "1673"
+}, {
+    name: "核心",
+    value: "1663"
+}, {
+    name: "终端",
+    value: "1662"
+},  {
+    name: "生活",
+    value: "1649"
+},  {
+    name: "测试",
+    value: "1623"
+}, {
+    name: "效果",
+    value: "1620"
+}, {
+    name: "解决",
+    value: "1612"
+}, {
+    name: "速度",
+    value: "1608"
+}, {
+    name: "美国",
+    value: "1604"
+}, {
+    name: "宣传",
+    value: "1587"
+}, {
+    name: "领域",
+    value: "1580"
+}, {
+    name: "学习",
+    value: "1567"
+}, {
+    name: "开发",
+    value: "1557"
+}, {
+    name: "老板",
+    value: "1549"
+}, {
+    name: "差距",
+    value: "1544"
+}, {
+    name: "时代",
+    value: "1537"
+}, {
+    name: "关系",
+    value: "1531"
+}, {
+    name: "机会",
+    value: "1516"
+}, {
+    name: "实在",
+    value: "1505"
+}, {
+    name: "视频",
+    value: "1501"
+},  {
+    name: "面试",
+    value: "1494"
+}, {
+    name: "照片",
+    value: "1476"
+}, {
+    name: "利益",
+    value: "1467"
+}, {
+    name: "关注",
+    value: "1459"
+}, {
+    name: "超过",
+    value: "1458"
+},{
+    name: "网上",
+    value: "1451"
+}, {
+    name: "标准",
+    value: "1448"
+}, {
+    name: "购买",
+    value: "1441"
+}, {
+    name: "相机",
+    value: "1430"
+}, {
+    name: "值得",
+    value: "1426"
+}, {
+    name: "同事",
+    value: "1424"
+}, {
+    name: "文化",
+    value: "1422"
+}, {
+    name: "电信",
+    value: "1419"
+}, {
+    name: "便宜",
+    value: "1411"
+}, {
+    name: "好看",
+    value: "1403"
+}, {
+    name: "同学",
+    value: "1402"
+}, {
+    name: "定位",
+    value: "1400"
+}, {
+    name: "国产手机",
+    value: "1372"
+}, {
+    name: "理解",
+    value: "1369"
+}, {
+    name: "创新",
+    value: "1366"
+}, {
+    name: "裁员",
+    value: "1366"
+}, {
+    name: "采用",
+    value: "1365"
+}, {
+    name: "信息",
+    value: "1365"
+}, {
+    name: "毕业",
+    value: "1358"
+}, {
+    name: "项目",
+    value: "1353"
+}, {
+    name: "爱国",
+    value: "1348"
+}, {
+    name: "优化",
+    value: "1320"
+}, {
+    name: "工程师",
+    value: "1319"
+},  {
+    name: "国外",
+    value: "1309"
+}, {
+    name: "智能手机",
+    value: "1307"
+}, {
+    name: "花粉",
+    value: "1304"
+}, {
+    name: "小时",
+    value: "1291"
+}, {
+    name: "发布会",
+    value: "1273"
+}, {
+    name: "骁龙",
+    value: "1273"
+}, {
+    name: "机器",
+    value: "1268"
+}, {
+    name: "显示",
+    value: "1267"
+}, {
+    name: "导致",
+    value: "1262"
+}, {
+    name: "努力",
+    value: "1255"
+}, {
+    name: "上市",
+    value: "1248"
+}, {
+    name: "官方",
+    value: "1240"
+}, {
+    name: "微信",
+    value: "1230"
+}, {
+    name: "智能",
+    value: "1217"
+}, {
+    name: "渠道",
+    value: "1214"
+}, {
+    name: "索尼",
+    value: "1211"
+},  {
+    name: "玻璃",
+    value: "1206"
+}, {
+    name: "诺基亚",
+    value: "1205"
+}, {
+    name: "入手",
+    value: "1202"
+}, {
+    name: "参数",
+    value: "1188"
+}, {
+    name: "控制",
+    value: "1186"
+}, {
+    name: "竞争",
+    value: "1186"
+}, {
+    name: "表现",
+    value: "1182"
+}, {
+    name: "方式",
+    value: "1181"
+}, {
+    name: "代表",
+    value: "1179"
+}, {
+    name: "社会",
+    value: "1173"
+}, {
+    name: "价位",
+    value: "1173"
+}, {
+    name: "方向",
+    value: "1172"
+}, {
+    name: "价值",
+    value: "1169"
+}, {
+    name: "设置",
+    value: "1163"
+}, {
+    name: "奋斗",
+    value: "1148"
+}, {
+    name: "基带",
+    value: "1144"
+}, {
+    name: "发热",
+    value: "1137"
+}, {
+    name: "新闻",
+    value: "1134"
+}, {
+    name: "压力",
+    value: "1132"
+}, {
+    name: "锤子",
+    value: "1129"
+}, {
+    name: "垃圾",
+    value: "1127"
+}, {
+    name: "稳定",
+    value: "1125"
+}, {
+    name: "增长",
+    value: "1117"
+}, {
+    name: "镜头",
+    value: "1111"
+},  {
+    name: "售后",
+    value: "1109"
+}, {
+    name: "线下",
+    value: "1104"
+},  {
+    name: "程度",
+    value: "1077"
+}, {
+    name: "依然",
+    value: "1075"
+}, {
+    name: "环境",
+    value: "1074"
+},  {
+    name: "目标",
+    value: "1061"
+}, {
+    name: "机子",
+    value: "1059"
+}, {
+    name: "合作",
+    value: "1054"
+}, {
+    name: "虚拟",
+    value: "1039"
+}, {
+    name: "乐视",
+    value: "1036"
+}, {
+    name: "电脑",
+    value: "1026"
+}, {
+    name: "自然",
+    value: "1026"
+}, {
+    name: "讨论",
+    value: "1020"
+}, {
+    name: "平台",
+    value: "1018"
+}, {
+    name: "做工",
+    value: "1016"
+}, {
+    name: "米粉",
+    value: "1015"
+}, {
+    name: "离职",
+    value: "1011"
+}, {
+    name: "学生",
+    value: "1009"
+}, {
+    name: "电话",
+    value: "1007"
+}, {
+    name: "实力",
+    value: "1006"
+}, {
+    name: "城市",
+    value: "1003"
+}, {
+    name: "大神",
+    value: "998"
+}, {
+    name: "研究",
+    value: "991"
+}, {
+    name: "像素",
+    value: "990"
+}, {
+    name: "投入",
+    value: "990"
+}, {
+    name: "打开",
+    value: "985"
+}, {
+    name: "缺点",
+    value: "981"
+}, {
+    name: "足够",
+    value: "976"
+}, {
+    name: "生产",
+    value: "971"
+}, {
+    name: "低端",
+    value: "970"
+}, {
+    name: "定价",
+    value: "965"
+}, {
+    name: "指纹识别",
+    value: "965"
+}, {
+    name: "办法",
+    value: "959"
+}, {
+    name: "工艺",
+    value: "958"
+}, {
+    name: "颜值",
+    value: "955"
+}, {
+    name: "媒体",
+    value: "952"
+}, {
+    name: "团队",
+    value: "949"
+}, {
+    name: "国际",
+    value: "946"
+}, {
+    name: "解锁",
+    value: "945"
+}, {
+    name: "玩游戏",
+    value: "944"
+}, {
+    name: "百度",
+    value: "941"
+}, {
+    name: "待遇",
+    value: "939"
+}, {
+    name: "人员",
+    value: "938"
+},  {
+    name: "微博",
+    value: "932"
+}, {
+    name: "厉害",
+    value: "929"
+}, {
+    name: "机身",
+    value: "927"
+}, {
+    name: "基础",
+    value: "918"
+}, {
+    name: "售价",
+    value: "915"
+}, {
+    name: "厂家",
+    value: "911"
+},  {
+    name: "华为公司",
+    value: "904"
+}, {
+    name: "习惯",
+    value: "899"
+}, {
+    name: "边框",
+    value: "898"
+}, {
+    name: "政策",
+    value: "895"
+},  {
+    name: "追求",
+    value: "885"
+}, {
+    name: "唯一",
+    value: "882"
+}, {
+    name: "意义",
+    value: "879"
+}, {
+    name: "情怀",
+    value: "879"
+}, {
+    name: "整体",
+    value: "875"
+}, {
+    name: "买手机",
+    value: "871"
+}, {
+    name: "超越",
+    value: "871"
+}, {
+    name: "长期",
+    value: "870"
+}, {
+    name: "关键",
+    value: "868"
+}, {
+    name: "自动",
+    value: "867"
+}, {
+    name: "过程",
+    value: "863"
+}, {
+    name: "架构",
+    value: "860"
+},  {
+    name: "人才",
+    value: "857"
+},  {
+    name: "文章",
+    value: "849"
+},  {
+    name: "赚钱",
+    value: "840"
+}, {
+    name: "纠结",
+    value: "837"
+}, {
+    name: "网通",
+    value: "830"
+}, {
+    name: "商务",
+    value: "830"
+}, {
+    name: "方案",
+    value: "829"
+}, {
+    name: "无线",
+    value: "822"
+}, {
+    name: "打电话",
+    value: "819"
+}, {
+    name: "细节",
+    value: "816"
+}, {
+    name: "招聘",
+    value: "815"
+}, {
+    name: "真心",
+    value: "815"
+}, {
+    name: "事件",
+    value: "813"
+}, {
+    name: "图片",
+    value: "813"
+}, {
+    name: "强大",
+    value: "813"
+}, {
+    name: "思科",
+    value: "813"
+}, {
+    name: "操作",
+    value: "812"
+}, {
+    name: "改变",
+    value: "807"
+}, {
+    name: "经济",
+    value: "807"
+}, {
+    name: "最新",
+    value: "802"
+},{
+    name: "空间",
+    value: "794"
+},  {
+    name: "学校",
+    value: "792"
+}, {
+    name: "高配",
+    value: "791"
+}, {
+    name: "战略",
+    value: "791"
+},  {
+    name: "自主",
+    value: "787"
+}, {
+    name: "金属",
+    value: "786"
+},  {
+    name: "保证",
+    value: "780"
+}, {
+    name: "谷歌",
+    value: "778"
+}, {
+    name: "算法",
+    value: "778"
+}, {
+    name: "良心",
+    value: "771"
+}, {
+    name: "年轻人",
+    value: "771"
+}, {
+    name: "评测",
+    value: "771"
+}, {
+    name: "手感",
+    value: "770"
+}, {
+    name: "功耗",
+    value: "768"
+}, {
+    name: "资源",
+    value: "768"
+}, {
+    name: "印度",
+    value: "763"
+}, {
+    name: "背景",
+    value: "761"
+}, {
+    name: "耳机",
+    value: "758"
+},  {
+    name: "平板",
+    value: "755"
+}, {
+    name: "高价",
+    value: "754"
+}, {
+    name: "年轻",
+    value: "752"
+}, {
+    name: "传统",
+    value: "749"
+}, {
+    name: "欧洲",
+    value: "747"
+}, {
+    name: "快充",
+    value: "746"
+}, {
+    name: "蓝绿",
+    value: "744"
+}, {
+    name: "支付",
+    value: "730"
+}, {
+    name: "竞争力",
+    value: "730"
+}, {
+    name: "位置",
+    value: "728"
+}, {
+    name: "负责",
+    value: "727"
+}, {
+    name: "股票",
+    value: "725"
+}, {
+    name: "概念",
+    value: "722"
+}, {
+    name: "界面",
+    value: "720"
+},{
+    name: "粉丝",
+    value: "716"
+}, {
+    name: "双摄",
+    value: "714"
+},{
+    name: "正面",
+    value: "712"
+}, {
+    name: "大学",
+    value: "712"
+}, {
+    name: "国企",
+    value: "710"
+}, {
+    name: "成熟",
+    value: "709"
+}, {
+    name: "主题",
+    value: "708"
+}, {
+    name: "上海",
+    value: "700"
+}, {
+    name: "协议",
+    value: "699"
+},  {
+    name: "组织",
+    value: "693"
+}, {
+    name: "人生",
+    value: "690"
+}, {
+    name: "牌子",
+    value: "689"
+},  {
+    name: "菊花",
+    value: "685"
+}, {
+    name: "下载",
+    value: "684"
+},  {
+    name: "魅蓝",
+    value: "681"
+}, {
+    name: "印象",
+    value: "681"
+}, {
+    name: "出货量",
+    value: "679"
+}, {
+    name: "屌丝",
+    value: "677"
+}, {
+    name: "策略",
+    value: "676"
+},  {
+    name: "女生",
+    value: "675"
+}, {
+    name: "够用",
+    value: "673"
+}, {
+    name: "旗舰机",
+    value: "672"
+}, {
+    name: "日本",
+    value: "672"
+}, {
+    name: "论坛",
+    value: "668"
+}, {
+    name: "定制",
+    value: "667"
+}, {
+    name: "状态",
+    value: "664"
+}, {
+    name: "曲面",
+    value: "664"
+}, {
+    name: "地位",
+    value: "664"
+}, {
+    name: "消费",
+    value: "663"
+}, {
+    name: "大厂",
+    value: "663"
+}, {
+    name: "家庭",
+    value: "663"
+},  {
+    name: "黑色",
+    value: "661"
+}, {
+    name: "实习",
+    value: "659"
+},  {
+    name: "抄袭",
+    value: "658"
+}, {
+    name: "场景",
+    value: "656"
+}, {
+    name: "风格",
+    value: "656"
+}, {
+    name: "低配",
+    value: "653"
+}, {
+    name: "积累",
+    value: "653"
+}, {
+    name: "联发科",
+    value: "652"
+}, {
+    name: "后台",
+    value: "650"
+}, {
+    name: "流程",
+    value: "649"
+}, {
+    name: "经理",
+    value: "648"
+}, {
+    name: "按键",
+    value: "647"
+}, {
+    name: "好用",
+    value: "646"
+}, {
+    name: "耗电",
+    value: "646"
+}, {
+    name: "知友",
+    value: "645"
+}, {
+    name: "满意",
+    value: "642"
+}, {
+    name: "领先",
+    value: "642"
+},{
+    name: "历史",
+    value: "640"
+},  {
+    name: "产品线",
+    value: "638"
+},{
+    name: "口碑",
+    value: "632"
+},  {
+    name: "拍摄",
+    value: "628"
+}, {
+    name: "官网",
+    value: "627"
+}, {
+    name: "期待",
+    value: "627"
+}, {
+    name: "抢购",
+    value: "627"
+}, {
+    name: "校招",
+    value: "620"
+}, {
+    name: "通讯",
+    value: "618"
+}, {
+    name: "综合",
+    value: "616"
+}, {
+    name: "雷军",
+    value: "614"
+}, {
+    name: "职业",
+    value: "612"
+}, {
+    name: "投资",
+    value: "608"
+}, {
+    name: "溢价",
+    value: "604"
+}, {
+    name: "卡顿",
+    value: "603"
+}, {
+    name: "吐槽",
+    value: "602"
+}, {
+    name: "阶段",
+    value: "602"
+}, {
+    name: "爱立信",
+    value: "599"
+});
+
+option.series[0].data = JosnList;
+
+myChart1.setOption(option);
+</script>

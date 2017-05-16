@@ -1,0 +1,1543 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <meta name="keywords" content="admin, dashboard, bootstrap, template, flat, modern, theme, responsive, fluid, retina, backend, html5, css, css3">
+
+  <meta name="description" content="">
+
+  <meta name="author" content="ThemeBucket">
+
+  <title>知乎</title>
+
+  <link rel="shortcut icon" href="#" type="image/png">
+
+ <link rel="shortcut icon" href="#" type="image/png">
+
+<!--icheck-->
+
+<link href="{% static 'zhanshi/js/iCheck/skins/minimal/minimal.css'%}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'zhanshi/js/iCheck/skins/square/square.css'%}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'zhanshi/js/iCheck/skins/square/red.css'%}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'zhanshi/js/iCheck/skins/square/blue.css'%}" rel="stylesheet" type="text/css">
+
+<!--dashboard calendar-->
+
+<link href="{% static 'zhanshi/css/clndr.css'%}" rel="stylesheet" type="text/css">
+
+<!--Morris Chart CSS -->
+
+<link rel="stylesheet" href="{% static 'zhanshi/js/morris-chart/morris.css'%}" type="text/css">
+
+<!--common-->
+
+<link href="{% static 'zhanshi/css/style.css'%}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'zhanshi/css/style-responsive.css'%}" rel="stylesheet" type="text/css">
+
+ <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+  <!--[if lt IE 9]>
+
+  <script src="{% static 'zhanshi/js/html5shiv.js'%}"></script>
+
+  <script src="{% static 'zhanshi/js/respond.min.js'%}"></script>
+
+  <![endif]-->
+
+</head>
+
+
+
+<body class="horizontal-menu-page">
+
+
+
+<section>
+
+
+
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+
+                    <span class="sr-only">Toggle navigation</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+
+                    <img src="{% static 'zhanshi/images/logo.png'%}" alt="">
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+
+ 					<li ><a href="{% url 'index' %}">Home</a></li>  
+
+                    <li ><a href="{% url 'activity' %}">Activity</a></li>      
+
+					<li class="active"><a href="{% url 'topic' %}">Topic Distribution</a></li>  
+
+					
+
+                </ul>
+
+
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+
+                        <form class="navbar-form navbar-left" role="search">
+
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" placeholder="Search">
+
+                            </div>
+
+                        </form>
+
+                    </li>  
+
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+
+    </nav>
+
+        <!--body wrapper start-->
+
+        <div class="wrapper">
+
+		<h4>话题‘华为’的问题及回答分布情况</h4>
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <!--statistics start-->
+
+                    <div class="row state-overview">
+
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+
+                            <div class="panel purple">
+
+                                <div class="symbol">
+
+                                    <i class="fa fa-gavel"></i>
+
+                                </div>
+
+                                <div class="state-value">
+
+                                    <div class="value">62723</div>
+
+                                    <div class="title">数据集</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+
+                            <div class="panel red">
+
+                                <div class="symbol">
+
+                                    <i class="fa fa-tags"></i>
+
+                                </div>
+
+                                <div class="state-value">
+
+                                    <div class="value">10633</div>
+
+                                    <div class="title">Question</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+
+                            <div class="panel blue">
+
+                                <div class="symbol">
+
+                                    <i class="fa fa-money"></i>
+
+                                </div>
+
+                                <div class="state-value">
+
+                                    <div class="value">52090</div>
+
+                                    <div class="title"> Answer</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+
+                            <div class="panel green">
+
+                                <div class="symbol">
+
+                                    <i class="fa fa-eye"></i>
+
+                                </div>
+
+                                <div class="state-value">
+
+                                    <div class="value">55284</div>
+
+                                    <div class="title">followers</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--statistics end-->
+
+                </div>
+
+            </div>
+
+           <div class="row" style="width:100%;margin:0 auto;">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-body">
+                   
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="clearfix">
+                                        <div id="main-chart-legend" class="pull-right">
+                                        </div>
+                                    </div>
+
+                                    <div id="main-chart">
+                                        <div id="word_cloud" class="main-chart" style="height:450px;">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			 <div class="row" style="width:100%;margin:0 auto;">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="clearfix">
+                                        <div id="main-chart-legend" class="pull-right">
+                                        </div>
+                                    </div>
+
+                                    <div id="main-chart">
+                                        <div id="topic_distribution" class="main-chart" style="height:550px;">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--body wrapper end-->
+
+
+
+        <!--footer section start-->
+
+        <footer>
+
+            2017 &copy; ZhiHu
+
+        </footer>
+
+        <!--footer section end-->
+
+
+
+
+
+    </div>
+
+    <!-- main content end-->
+
+</section>
+
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+<script src="{% static 'zhanshi/js/jquery-1.10.2.min.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/jquery-ui-1.9.2.custom.min.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/jquery-migrate-1.2.1.min.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/bootstrap.min.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/modernizr.min.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/jquery.nicescroll.js'%}"></script>
+
+
+
+<!--easy pie chart-->
+
+<script src="{% static 'zhanshi/js/easypiechart/jquery.easypiechart.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/easypiechart/easypiechart-init.js'%}"></script>
+
+
+
+<!--Sparkline Chart-->
+
+<script src="{% static 'zhanshi/js/sparkline/jquery.sparkline.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/sparkline/sparkline-init.js'%}"></script>
+
+
+
+<!--icheck -->
+
+<script src="{% static 'zhanshi/js/iCheck/jquery.icheck.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/icheck-init.js'%}"></script>
+
+
+
+<!-- jQuery Flot Chart-->
+
+<script src="{% static 'zhanshi/js/flot-chart/jquery.flot.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/flot-chart/jquery.flot.tooltip.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/flot-chart/jquery.flot.resize.js'%}"></script>
+
+
+<script src="{% static 'zhanshi/js/wordcloud2.js'%}"></script>
+
+
+
+<script src="{% static 'zhanshi/js/echarts.min.js'%}"></script>
+
+
+<!--Morris Chart-->
+
+<script src="{% static 'zhanshi/js/morris-chart/morris.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/morris-chart/raphael-min.js'%}"></script>
+
+
+
+<!--Calendar-->
+
+<script src="{% static 'zhanshi/js/calendar/clndr.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/calendar/evnt.calendar.init.js'%}"></script>
+
+<script src="{% static 'zhanshi/js/calendar/moment-2.2.1.js'%}"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+
+
+
+<!--common scripts for all pages-->
+
+<script src="{% static 'zhanshi/js/scripts.js'%}"></script>
+
+
+
+<!--Dashboard Charts-->
+
+<script src="{% static 'zhanshi/js/dashboard-chart-init.js'%}"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('topic_distribution'));
+option = {
+   
+    title: {
+        text: "知乎话题‘华为’的主题分布",
+        subtext: "By LInda",
+        top: "top",
+        left: "center"
+    },
+    tooltip: {},
+    legend: [{
+        formatter: function(name) {
+            return echarts.format.truncateText(name, 40, '14px Microsoft Yahei', '…');
+        },
+        tooltip: {
+            show: true
+        },
+        selectedMode: 'false',
+        bottom: 20,
+        data: ['Topic1', 'Topic2', 'Topic3', 'Topic4', 'Topic5', 'Topic6', 'Topic7', 'Topic8', 'Topic9', 'Topic10','其他']
+    }],
+    toolbox: {
+        show: true,
+        feature: {
+            dataView: {
+                show: true,
+                readOnly: true
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    animationDuration: 3000,
+    animationEasingUpdate: 'quinticInOut',
+    series: [{
+        name: '华为潜在主题',
+        type: 'graph',
+        layout: 'force',
+
+        force: {
+            repulsion: 300
+        },
+        data: [{
+            "name": "话题”华为“",
+            // "x": 0,
+            // y: 0,
+            "symbolSize": 120,
+            "draggable": "true",
+            "value": 100
+
+        },{
+            "name": "其他",
+            "value": 7.65,
+            "symbolSize": 100,
+            "category": "其他",
+            "draggable": "true"
+        },{
+            "name": "Topic1",
+            "value": 2.06,
+            "symbolSize": 100,
+            "category": "Topic1",
+            "draggable": "true"
+        }, {
+            "name": "专利",
+            "symbolSize": 40,
+            "category": "Topic1",
+            "draggable": "true",
+            "value": 0.087
+        }, {
+            "name": "中兴",
+            "symbolSize": 30,
+            "category": "Topic1",
+            "draggable": "true",
+            "value": 0.032
+        }, {
+            "name": "知识产权",
+            "symbolSize": 20,
+            "category": "Topic1",
+            "draggable": "true",
+            "value": 0.017
+        }, {
+            "name": "中国_topic1",
+            "symbolSize": 10,
+            "category": "Topic1",
+            "draggable": "true",
+            "value": 0.016
+        }, {
+            "name": "公司_topic1",
+            "symbolSize": 8,
+            "category": "Topic1",
+            "draggable": "true",
+            "value": 0.015
+        }, {
+            "name": "Topic2",
+            "value": 11.7,
+            "symbolSize": 100,
+            "category": "Topic2",
+            "draggable": "true"
+        }, {
+            "name": "手机_topic2",
+            "symbolSize": 40,
+            "category": "Topic2",
+            "draggable": "true",
+            "value": 0.040
+        }, {
+            "name": "荣耀",
+            "symbolSize": 30,
+            "category": "Topic2",
+            "draggable": "true",
+            "value": 0.031
+        }, {
+            "name": "屏幕",
+            "symbolSize": 20,
+            "category": "Topic2",
+            "draggable": "true",
+            "value": 0.030
+        }, {
+            "name": "华为_topic2",
+            "symbolSize": 10,
+            "category": "Topic2",
+            "draggable": "true",
+            "value": 0.025
+        }, {
+            "name": "系统_topic2",
+            "symbolSize": 8,
+            "category": "Topic2",
+            "draggable": "true",
+            "value": 0.019
+
+        }, {
+            "name": "功能",
+            "symbolSize": 8,
+            "category": "Topic2",
+            "draggable": "true",
+            "value": 0.015
+
+        }, {
+            "name": "Topic3",
+            "value": 28.8,
+            "symbolSize": 100,
+            "category": "Topic3",
+            "draggable": "true"
+        }, {
+            "name": "手机_topic3",
+            "symbolSize": 40,
+            "category": "Topic3",
+            "draggable": "true",
+            "value": 0.119
+        }, {
+            "name": "华为_topic3",
+            "symbolSize": 30,
+            "category": "Topic3",
+            "draggable": "true",
+            "value": 0.044
+        }, {
+            "name": "苹果",
+            "symbolSize": 20,
+            "category": "Topic3",
+            "draggable": "true",
+            "value": 0.036
+        }, {
+            "name": "三星",
+            "symbolSize": 10,
+            "category": "Topic3",
+            "draggable": "true",
+            "value": 0.022
+        }, {
+            "name": "魅族",
+            "symbolSize": 8,
+            "category": "Topic3",
+            "draggable": "true",
+            "value": 0.014
+        }, {
+            "name": "Topic4",
+            "value": 4.9,
+            "symbolSize": 100,
+            "category": "Topic4",
+            "draggable": "true"
+        }, {
+            "name": "中国_topic4",
+            "symbolSize": 40,
+            "category": "Topic4",
+            "draggable": "true",
+            "value": 0.039
+        }, {
+            "name": "美国",
+            "symbolSize": 30,
+            "category": "Topic4",
+            "draggable": "true",
+            "value": 0.026
+        }, {
+            "name": "深圳",
+            "symbolSize": 20,
+            "category": "Topic4",
+            "draggable": "true",
+            "value": 0.020
+        }, {
+            "name": "社会",
+            "symbolSize": 10,
+            "category": "Topic4",
+            "draggable": "true",
+            "value": 0.017
+        }, {
+            "name": "企业_topic4",
+            "symbolSize": 8,
+            "category": "Topic4",
+            "draggable": "true",
+            "value": 0.017
+
+        }, {
+            "name": "Topic5",
+            "value": 19.1,
+            "symbolSize": 100,
+            "category": "Topic5",
+            "draggable": "true"
+        }, {
+            "name": "华为_topic5",
+            "symbolSize": 40,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.068
+        }, {
+            "name": "公司_topic5",
+            "symbolSize": 30,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.037
+        }, {
+            "name": "员工_topic5",
+            "symbolSize": 20,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.033
+        }, {
+            "name": "工作",
+            "symbolSize": 10,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.030
+        }, {
+            "name": "企业_topic5",
+            "symbolSize": 10,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.014
+        }, {
+            "name": "部门",
+            "symbolSize": 10,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.010
+        }, {
+            "name": "领导_topic5",
+            "symbolSize": 10,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.007
+        }, {
+            "name": "工资",
+            "symbolSize": 10,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.007
+        }, {
+            "name": "岗位",
+            "symbolSize": 8,
+            "category": "Topic5",
+            "draggable": "true",
+            "value": 0.006
+        }, {
+            "name": "Topic6",
+            "value": 5.9,
+            "symbolSize": 100,
+            "category": "Topic6",
+            "draggable": "true"
+        }, {
+            "name": "摄像头",
+            "symbolSize": 40,
+            "category": "Topic6",
+            "draggable": "true",
+            "value": 0.039
+        }, {
+            "name": "照片",
+            "symbolSize": 30,
+            "category": "Topic6",
+            "draggable": "true",
+            "value": 0.030
+        }, {
+            "name": "镜头",
+            "symbolSize": 20,
+            "category": "Topic6",
+            "draggable": "true",
+            "value": 0.030
+        }, {
+            "name": "模式",
+            "symbolSize": 10,
+            "category": "Topic6",
+            "draggable": "true",
+            "value": 0.027
+        }, {
+            "name": "像素",
+            "symbolSize": 8,
+            "category": "Topic6",
+            "draggable": "true",
+            "value": 0.027
+        }, {
+            "name": "色彩",
+            "symbolSize": 8,
+            "category": "Topic6",
+            "draggable": "true",
+            "value": 0.015
+        }, {
+            "name": "Topic7",
+            "value": 2.7,
+            "symbolSize": 100,
+            "category": "Topic7",
+            "draggable": "true"
+        }, {
+            "name": "网络",
+            "symbolSize": 40,
+            "category": "Topic7",
+            "draggable": "true",
+            "value": 0.039
+        }, {
+            "name": "技术",
+            "symbolSize": 30,
+            "category": "Topic7",
+            "draggable": "true",
+            "value": 0.029
+        }, {
+            "name": "设备",
+            "symbolSize": 20,
+            "category": "Topic7",
+            "draggable": "true",
+            "value": 0.024
+        }, {
+            "name": "系统_topic7",
+            "symbolSize": 10,
+            "category": "Topic7",
+            "draggable": "true",
+            "value": 0.014
+        }, {
+            "name": "基站",
+            "symbolSize": 8,
+            "category": "Topic7",
+            "draggable": "true",
+            "value": 0.009
+        }, {
+            "name": "Topic8",
+            "value": 7.0,
+            "symbolSize": 100,
+            "category": "Topic8",
+            "draggable": "true"
+        }, {
+            "name": "华为_topic8",
+            "symbolSize": 40,
+            "category": "Topic8",
+            "draggable": "true",
+            "value": 0.097
+        }, {
+            "name": "中国_topic8",
+            "symbolSize": 30,
+            "category": "Topic8",
+            "draggable": "true",
+            "value": 0.024
+        }, {
+            "name": "企业_topic8",
+            "symbolSize": 20,
+            "category": "Topic8",
+            "draggable": "true",
+            "value": 0.023
+        }, {
+            "name": "思科",
+            "symbolSize": 10,
+            "category": "Topic8",
+            "draggable": "true",
+            "value": 0.023
+        }, {
+            "name": "利润",
+            "symbolSize": 8,
+            "category": "Topic8",
+            "draggable": "true",
+            "value": 0.010
+        }, {
+            "name": "互联网",
+            "symbolSize": 8,
+            "category": "Topic8",
+            "draggable": "true",
+            "value": 0.008
+        }, {
+            "name": "Topic9",
+            "value": 6.1,
+            "symbolSize": 100,
+            "category": "Topic9",
+            "draggable": "true"
+        }, {
+            "name": "华为_topic9",
+            "symbolSize": 40,
+            "category": "Topic9",
+            "draggable": "true",
+            "value": 0.136
+        }, {
+            "name": "员工_topic9",
+            "symbolSize": 30,
+            "category": "Topic9",
+            "draggable": "true",
+            "value": 0.038
+        }, {
+            "name": "公司_topic9",
+            "symbolSize": 20,
+            "category": "Topic9",
+            "draggable": "true",
+            "value": 0.024
+        }, {
+            "name": "裁员",
+            "symbolSize": 10,
+            "category": "Topic9",
+            "draggable": "true",
+            "value": 0.023
+        }, {
+            "name": "政策",
+            "symbolSize": 8,
+            "category": "Topic9",
+            "draggable": "true",
+            "value": 0.016
+        }, {
+            "name": "领导_topic9",
+            "symbolSize": 8,
+            "category": "Topic9",
+            "draggable": "true",
+            "value": 0.011
+        }, {
+            "name": "Topic10",
+            "value": 4.2,
+            "symbolSize": 100,
+            "category": "Topic10",
+            "draggable": "true"
+        }, {
+            "name": "芯片",
+            "symbolSize": 40,
+            "category": "Topic10",
+            "draggable": "true",
+            "value": 0.048
+        }, {
+            "name": "性能",
+            "symbolSize": 30,
+            "category": "Topic10",
+            "draggable": "true",
+            "value": 0.047
+        }, {
+            "name": "麒麟",
+            "symbolSize": 20,
+            "category": "Topic10",
+            "draggable": "true",
+            "value": 0.044
+        }, {
+            "name": "高通",
+            "symbolSize": 10,
+            "category": "Topic10",
+            "draggable": "true",
+            "value": 0.040
+        }, {
+            "name": "海思",
+            "symbolSize": 8,
+            "category": "Topic10",
+            "draggable": "true",
+            "value": 0.035
+        }, {
+            "name": "处理器",
+            "symbolSize": 8,
+            "category": "Topic10",
+            "draggable": "true",
+            "value": 0.027
+        }],
+        links: [{
+            "source": "话题”华为“",
+            "target": "Topic1"
+        }, {
+            "source": "Topic1",
+            "target": "专利"
+        }, {
+            "source": "Topic1",
+            "target": "中兴"
+        }, {
+            "source": "Topic1",
+            "target": "知识产权"
+        }, {
+            "source": "Topic1",
+            "target": "中国_topic1"
+        }, {
+            "source": "Topic1",
+            "target": "公司_topic1"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic2"
+        }, {
+            "source": "Topic2",
+            "target": "手机_topic2"
+        }, {
+            "source": "Topic2",
+            "target": "荣耀"
+        }, {
+            "source": "Topic2",
+            "target": "屏幕"
+        }, {
+            "source": "Topic2",
+            "target": "华为_topic2"
+        }, {
+            "source": "Topic2",
+            "target": "系统_topic2"
+
+        }, {
+            "source": "Topic2",
+            "target": "功能"
+
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic3"
+        }, {
+            "source": "Topic3",
+            "target": "手机_topic3"
+        }, {
+            "source": "Topic3",
+            "target": "华为_topic3"
+        }, {
+            "source": "Topic3",
+            "target": "苹果"
+        }, {
+            "source": "Topic3",
+            "target": "三星"
+        }, {
+            "source": "Topic3",
+            "target": "魅族"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic4"
+        }, {
+            "source": "Topic4",
+            "target": "中国_topic4"
+        }, {
+            "source": "Topic4",
+            "target": "美国"
+        }, {
+            "source": "Topic4",
+            "target": "深圳"
+        }, {
+            "source": "Topic4",
+            "target": "社会"
+        }, {
+            "source": "Topic4",
+            "target": "企业_topic4"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic5"
+        }, {
+            "source": "Topic5",
+            "target": "华为_topic5"
+        }, {
+            "source": "Topic5",
+            "target": "公司_topic5"
+        }, {
+            "source": "Topic5",
+            "target": "员工_topic5"
+        }, {
+            "source": "Topic5",
+            "target": "工作"
+        }, {
+            "source": "Topic5",
+            "target": "企业_topic5"
+        }, {
+            "source": "Topic5",
+            "target": "部门"
+        }, {
+            "source": "Topic5",
+            "target": "领导_topic5"
+        }, {
+            "source": "Topic5",
+            "target": "工资"
+        }, {
+            "source": "Topic5",
+            "target": "岗位"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic6"
+        }, {
+            "source": "Topic6",
+            "target": "摄像头"
+        }, {
+            "source": "Topic6",
+            "target": "照片"
+        }, {
+            "source": "Topic6",
+            "target": "镜头"
+        }, {
+            "source": "Topic6",
+            "target": "模式"
+        }, {
+            "source": "Topic6",
+            "target": "像素"
+        }, {
+            "source": "Topic6",
+            "target": "色彩"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic7"
+        }, {
+            "source": "Topic7",
+            "target": "网络"
+        }, {
+            "source": "Topic7",
+            "target": "技术"
+        }, {
+            "source": "Topic7",
+            "target": "设备"
+        }, {
+            "source": "Topic7",
+            "target": "系统_topic7"
+        }, {
+            "source": "Topic7",
+            "target": "基站"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic8"
+        }, {
+            "source": "Topic8",
+            "target": "华为_topic8"
+        }, {
+            "source": "Topic8",
+            "target": "中国_topic8"
+        }, {
+            "source": "Topic8",
+            "target": "企业_topic8"
+        }, {
+            "source": "Topic8",
+            "target": "思科"
+        }, {
+            "source": "Topic8",
+            "target": "利润"
+        }, {
+            "source": "Topic8",
+            "target": "互联网"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic9"
+        }, {
+            "source": "Topic9",
+            "target": "华为_topic9"
+        }, {
+            "source": "Topic9",
+            "target": "员工_topic9"
+        }, {
+            "source": "Topic9",
+            "target": "公司_topic9"
+        }, {
+            "source": "Topic9",
+            "target": "裁员"
+        }, {
+            "source": "Topic9",
+            "target": "政策"
+        }, {
+            "source": "Topic9",
+            "target": "领导_topic9"
+        }, {
+            "source": "话题”华为“",
+            "target": "Topic10"
+        }, {
+            "source": "Topic10",
+            "target": "芯片"
+        }, {
+            "source": "Topic10",
+            "target": "性能"
+        }, {
+            "source": "Topic10",
+            "target": "麒麟"
+        }, {
+            "source": "Topic10",
+            "target": "高通"
+        }, {
+            "source": "Topic10",
+            "target": "海思"
+        }, {
+            "source": "Topic10",
+            "target": "处理器"
+        },{
+            "source": "话题”华为“",
+            "target": "其他"
+        }],
+        categories: [{
+            'name': 'Topic1'
+        }, {
+            'name': 'Topic2'
+        }, {
+            'name': 'Topic3'
+        }, {
+            'name': 'Topic4'
+        }, {
+            'name': 'Topic5'
+        }, {
+            'name': 'Topic6'
+        }, {
+            'name': 'Topic7'
+        }, {
+            'name': 'Topic8'
+        }, {
+            'name': 'Topic9'
+        }, {
+            'name': 'Topic10'
+        },{'name':'其他',}],
+        focusNodeAdjacency: true,
+        roam: true,
+        label: {
+            normal: {
+
+                show: true,
+                position: 'top',
+
+            }
+        },
+        lineStyle: {
+            normal: {
+                color: 'source',
+                curveness: 0,
+                type: "solid"
+            }
+        }
+    }]
+};
+myChart.setOption(option);
+</script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+WordCloud(document.getElementById('word_cloud'),{list:[["华为",200],
+["手机",180],
+["小米",150],
+["公司",133],
+["荣耀",100],
+["三星",98],
+["苹果",88],
+["产品",83],
+["员工",82],
+["工作",76],
+["企业",76],
+["用户",71],
+["系统",68],
+["技术",66],
+["市场",66],
+["中国",61],
+["屏幕",57],
+["品牌",55],
+["魅族",50],
+["喜欢",49],
+["价格",48],
+["性能",46],
+["国内",46],
+["功能",45],
+["研发",44],
+["设计",44],
+["体验",44],
+["厂商",42],
+["硬件",40],
+["时间",40],
+["发展",39],
+["支持",38],
+["系列",37],
+["软件",37],
+["配置",35],
+["行业",34],
+["拍照",34],
+["性价比",32],
+["高端",32],
+["消费者",31],
+["麒麟",30],
+["能力",29],
+["芯片",29],
+["加班",28],
+["高通",27],
+["电池",27],
+["推荐",26],
+["发布",26],
+["营销",26],
+["部门",26],
+["业务",26],
+["摄像头",25],
+["续航",25],
+["销量",25],
+["模式",25],
+["内存",24],
+["安卓",24],
+["质量",24],
+["外观",24],
+["处理器",23],
+["通信",23],
+["专利",23],
+["数据",23],
+["成本",23],
+["国产",23],
+["旗舰",23],
+["未来",23],
+["影响",23],
+["水军",23],
+["互联网",22],
+["网络",22],
+["第一",22],
+["评价",22],
+["销售",22],
+["不用",21],
+["世界",21],
+["成功",21],
+["提升",21],
+["建议",21],
+["海军",21],
+["优势",20],
+["任正非",20],
+["内部",20],
+["服务",19],
+["利润",19],
+["中兴",19],
+["科技",19],
+["需求",19],
+["海思",18],
+["专业",18],
+["红米",18],
+["简单",18],
+["广告",18],
+["设备",18],
+["客户",18],
+["更好",18],
+["国家",18],
+["估计",18],
+["领导",18],
+["流畅",18],
+["充电",18],
+["全球",18],
+["岗位",17],
+["联想",17],
+["版本",17],
+["运营商",17],
+["机型",17],
+["指纹",17],
+["管理",17],
+["朋友",17],
+["工资",17],
+["优秀",17],
+["海外",17],
+["好像",17],
+["升级",17],
+["信号",17],
+["水平",17],
+["深圳",17],
+["收入",16],
+["游戏",16],
+["核心",16],
+["终端",16],
+["生活",16],
+["大部分",16],
+["测试",16],
+["效果",16],
+["解决",16],
+["速度",16],
+["美国",16],
+["宣传",15],
+["领域",15],
+["学习",15],
+["开发",15],
+["老板",15],
+["差距",15],
+["去年",15],
+["时代",15],
+["关系",15],
+["机会",15],
+["视频",15],
+["适合",15],
+["面试",14],
+["照片",14],
+["利益",14],
+["关注",14],
+["超过",14],
+["网上",14],
+["标准",14],
+["购买",14],
+["相机",14],
+["值得",14],
+["同事",14],
+["文化",14],
+["电信",14],
+["便宜",14],
+["好看",14],
+["同学",14],
+["定位",14],
+["国产手机",13],
+["理解",13],
+["创新",13],
+["裁员",13],
+["采用",13],
+["信息",13],
+["毕业",13],
+["项目",13],
+["爱国",13],
+["优化",13],
+["工程师",13],
+["国外",13],
+["智能手机",13],
+["花粉",13],
+["小时",12],
+["发布会",12],
+["骁龙",12],
+["机器",12],
+["显示",12],
+["努力",12],
+["上市",12],
+["官方",12],
+["微信",12],
+["智能",12],
+["渠道",12],
+["索尼",12],
+["玻璃",12],
+["诺基亚",12],
+["入手",12],
+["参数",11],
+["控制",11],
+["竞争",11],
+["表现",11],
+["方式",11],
+["代表",11],
+["社会",11],
+["价位",11],
+["方向",11],
+["价值",11],
+["奋斗",11],
+["基带",11],
+["发热",11],
+["新闻",11],
+["压力",11],
+["锤子",11],
+["垃圾",11],
+["稳定",11],
+["增长",11],
+["镜头",11],
+["售后",11],
+["提高",11],
+["线下",11],
+["环境",10],
+["目标",10],
+["机子",10],
+["合作",10],
+["虚拟",10],
+["乐视",10],
+["电脑",10],
+["自然",10],
+["讨论",10],
+["平台",10],
+["做工",10],
+["米粉",10],
+["离职",10],
+["学生",10],
+["电话",10],
+["实力",10],
+["城市",10],
+["大神",9],
+["研究",9],
+["像素",9],
+["投入",9],
+["缺点",9],
+["生产",9],
+["低端",9],
+["定价",9],
+["指纹识别",9],
+["办法",9],
+["工艺",9],
+["颜值",9],
+["媒体",9],
+["团队",9],
+["国际",9],
+["解锁",9],
+["玩游戏",9],
+["百度",9],
+["待遇",9],
+["人员",9],
+["用过",9],
+["微博",9],
+["谢谢",9],
+["厉害",9],
+["机身",9],
+["基础",9],
+["售价",9],
+["厂家",9],
+["华为公司",9],
+["习惯",8],
+["边框",8],
+["政策",8],
+["好多",8],
+["找到",8],
+["追求",8],
+["唯一",8],
+["意义",8],
+["情怀",8],
+["整体",8],
+["买手机",8],
+["超越",8],
+["长期",8],
+["关键",8],
+["自动",8],
+["过程",8],
+["架构",8],
+["增加",8],
+["人才",8],
+["文章",8],
+["赚钱",8],
+["纠结",8],
+["经历",8],
+["网通",8],
+["商务",8],
+["方案",8],
+["无线",8],
+["打电话",8],
+["细节",8],
+["招聘",8],
+["真心",8],
+["事件",8],
+["图片",8],
+["强大",8],
+["思科",8],
+["操作",8],
+["改变",8],
+["经济",8],
+["最新",8],
+["空间",7],
+["学校",7],
+["高配",7],
+["战略",7],
+["自主",7],
+["金属",7],
+["保证",7],
+["谷歌",7],
+["算法",7],
+["良心",7],
+["年轻人",7],
+["评测",7],
+["手感",7],
+["功耗",7],
+["资源",7],
+["日常",7],
+["印度",7],
+["背景",7],
+["耳机",7],
+["平板",7],
+["高价",7],
+["年轻",7],
+["传统",7],
+["欧洲",7],
+["快充",7],
+["蓝绿",7],
+["支付",7],
+["竞争力",7],
+["位置",7],
+["负责",7],
+["股票",7],
+["离开",7],
+["想法",7],
+["概念",7],
+["界面",7],
+["粉丝",7],
+["双摄",7],
+["正面",7],
+["大学",7],
+["国企",7],
+["成熟",7],
+["主题",7],
+["上海",7],
+["协议",6],
+["组织",6],
+["人生",6],
+["牌子",6],
+["下载",6],
+["魅蓝",6],
+["印象",6],
+["出货量",6],
+["屌丝",6],
+["策略",6],
+["女生",6],
+["够用",6],
+["旗舰机",6],
+["日本",6],
+["论坛",6],
+["定制",6],
+["曲面",6],
+["地位",6],
+["消费",6],
+["大厂",6],
+["家庭",6],
+["因素",6],
+["黑色",6],
+["实习",6],
+["抄袭",6],
+["场景",6],
+["风格",6],
+["低配",6],
+["积累",6],
+["联发科",6],
+["后台",6],
+["流程",6],
+["经理",6],
+["按键",6],
+["好用",6],
+["耗电",6],
+["知友",6],
+["合适",6],
+["满意",6],
+["领先",6],
+["历史",6],
+["产品线",6],
+["口碑",6],
+["地区",6],
+["优点",6],
+["官网",6],
+["期待",6],
+["抢购",6],
+["校招",6],
+["通讯",6],,
+["雷军",6],
+["职业",6],
+["投资",6],
+["溢价",6],
+["卡顿",6],
+["吐槽",6],
+["爱立信",5],]})
+</script>
+</body>
+</html>
